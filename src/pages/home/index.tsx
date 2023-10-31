@@ -15,14 +15,14 @@ export function Home() {
     }
   }, [localStorage.getItem("user")]);
 
-  const { data } = useGetTasks(user?.id!);
+  const { data, refetch } = useGetTasks(user?.id!);
 
   console.log(data);
   return (
     <div className={styles["container"]}>
       <Header />
       {data?.length !== 0 ? (
-        <Table data={data} />
+        <Table data={data} refetch={refetch} />
       ) : (
         "Nenhuma tarefa cadastrada."
       )}

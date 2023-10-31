@@ -17,3 +17,9 @@ export const createTask = async (request: CreateTaskDTO) => {
     ...request,
   });
 };
+
+export const deleteOne = async (id: string) => {
+  const { data } = await api.delete(`/tasks/${id}`);
+
+  return data.result;
+};
