@@ -14,6 +14,9 @@ export function Header() {
     <header>
       <div className={styles["container"]}>
         <h1>to do</h1>
+        <button onClick={() => navigate("/create-task")}>
+          adicionar tarefa
+        </button>
         <button onClick={logout}>logout</button>
       </div>
     </header>

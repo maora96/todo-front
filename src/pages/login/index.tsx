@@ -15,19 +15,23 @@ export function Login() {
 
   const navigate = useNavigate();
 
-  const loginMutation = useMutation(
-    async (request: CreateUserDTO) => login(request),
-    {
-      onSuccess: (data) => {
-        const token = data.data.token;
-        localStorage.setItem("token", JSON.stringify(token));
-        navigate("/");
-      },
-      onError: (data: any) => {
-        setLoginError(data.response.data.message);
-      },
-    }
-  );
+  const loginMutation = useMutation(async (request: User) => login(request), {
+    onSuccess: (data) => {
+      const token = data.data.token;
+      localStorage.setItem("token", JSON.stringify(token));
+
+      const user = {
+        username: data.data.username,
+        id: data.data.id,
+      };
+      localStorage.setItem("user", JSON.stringify(user));
+
+      navigate("/");
+    },
+    onError: (data: any) => {
+      setLoginError(data.response.data.message);
+    },
+  });
 
   const { register, handleSubmit } = useForm<FormValues>();
 

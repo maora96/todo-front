@@ -18,7 +18,7 @@ export function Signup() {
   const navigate = useNavigate();
 
   const createUserMutation = useMutation(
-    async (request: CreateUserDTO) => createUser(request),
+    async (request: User) => createUser(request),
     {
       onSuccess: (data) => {
         const user = {
