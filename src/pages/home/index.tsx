@@ -1,9 +1,10 @@
+import { Header } from "../../components/header";
 import styles from "./styles.module.scss";
 
 export function Home() {
   return (
-    <>
-      <h1>Welcome to home</h1>
-    </>
+    <div className={styles["container"]}>
+      <Header />
+    </div>
   );
 }

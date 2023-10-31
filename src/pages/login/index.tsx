@@ -44,7 +44,7 @@ export function Login() {
           {...register("username", { required: true })}
           placeholder="Username"
         />
-        <input {...register("password")} placeholder="Password" />
+        <input {...register("password")} placeholder="Senha" type="password" />
 
         {loginError && <span>{loginError}</span>}
         <input type="submit" className={styles["submit"]} />
