@@ -14,7 +14,7 @@ type FormValues = {
 };
 
 export function CreateTask() {
-  const [createTaskError, setCreateTaskError] = useState();
+  const [, setCreateTaskError] = useState();
 
   const getUserId = () => {
     const storageUser = localStorage.getItem("user");

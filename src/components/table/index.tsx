@@ -9,12 +9,12 @@ interface ITable {
 }
 
 export function Table({ data, refetch }: ITable) {
-  const [deleteError, setDeleteError] = useState<string>();
+  const [, setDeleteError] = useState<string>();
 
   const deleteTaskMutation = useMutation(
     async (request: string) => deleteOne(request),
     {
-      onSuccess: (data) => {
+      onSuccess: () => {
         refetch();
       },
       onError: (data: any) => {
