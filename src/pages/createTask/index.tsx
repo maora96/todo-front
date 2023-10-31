@@ -29,15 +29,7 @@ export function CreateTask() {
   const createTaskMutation = useMutation(
     async (request: CreateTaskDTO) => createTask(request),
     {
-      onSuccess: (data) => {
-        console.log(data);
-        // const token = data.data.token;
-        // localStorage.setItem("token", JSON.stringify(token));
-        // const user = {
-        //   username: data.data.username,
-        //   id: data.data.id,
-        // };
-        // localStorage.setItem("user", JSON.stringify(user));
+      onSuccess: () => {
         navigate("/");
       },
       onError: (data: any) => {
@@ -52,7 +44,6 @@ export function CreateTask() {
       ...data,
       userId,
     };
-    console.log(request);
     createTaskMutation.mutate(request);
   };
 
@@ -62,13 +53,17 @@ export function CreateTask() {
   return (
     <div className={styles["container"]}>
       <Header />
+      <h2>Criar tarefa</h2>
       <form onSubmit={handleSubmit(onSubmit)} className={styles["form"]}>
         <input
           {...register("title", { required: true })}
           placeholder="Título"
         />
         <textarea {...register("description")} placeholder="Descrição" />
-        <input type="checkbox" {...register("isConcluded")} />
+        <div className={styles["checkbox"]}>
+          <input type="checkbox" {...register("isConcluded")} />
+          <span>Concluída?</span>
+        </div>
         <input type="submit" className={styles["submit"]} />
       </form>
     </div>

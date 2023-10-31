@@ -13,10 +13,10 @@ export function Header() {
   return (
     <header>
       <div className={styles["container"]}>
-        <h1>to do</h1>
         <button onClick={() => navigate("/create-task")}>
           adicionar tarefa
         </button>
+        <h1 onClick={() => navigate("/")}>tarefas</h1>
         <button onClick={logout}>logout</button>
       </div>
     </header>

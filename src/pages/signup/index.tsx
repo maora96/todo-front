@@ -70,7 +70,10 @@ export function Signup() {
         {usernameError && <span>{usernameError}</span>}
         <input type="submit" className={styles["submit"]} />
         <span>
-          Tem conta? <span onClick={() => navigate("/login")}>Entrar</span>
+          Tem conta?{" "}
+          <span className={styles["span"]} onClick={() => navigate("/login")}>
+            Entrar
+          </span>
         </span>
       </form>
     </div>

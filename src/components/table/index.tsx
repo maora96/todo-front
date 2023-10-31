@@ -39,7 +39,10 @@ export function Table({ data, refetch }: ITable) {
             <div>{task.description}</div>
             <div>{task.concludedAt}</div>
             <div>{task.isConcluded === true ? "Concluída" : "A fazer"}</div>
-            <div onClick={() => deleteTaskMutation.mutate(task.id)}>
+            <div
+              onClick={() => deleteTaskMutation.mutate(task.id)}
+              className={styles["delete"]}
+            >
               Deletar
             </div>
           </div>

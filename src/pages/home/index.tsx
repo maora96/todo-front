@@ -16,8 +16,6 @@ export function Home() {
   }, [localStorage.getItem("user")]);
 
   const { data, refetch } = useGetTasks(user?.id!);
-
-  console.log(data);
   return (
     <div className={styles["container"]}>
       <Header />

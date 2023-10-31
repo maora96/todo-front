@@ -1,0 +1,35 @@
+h2 {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+form {
+  width: 50%;
+  margin: 0 auto;
+
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+input,
+textarea {
+  padding: 1rem;
+  border-radius: 0.625rem;
+  border: 1px solid lightgray;
+  width: 15.625rem;
+}
+
+.checkbox {
+  width: 15.625rem;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 2rem;
+  }
+}

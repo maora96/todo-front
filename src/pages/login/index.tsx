@@ -54,7 +54,9 @@ export function Login() {
         <input type="submit" className={styles["submit"]} />
         <span>
           Não tem conta?{" "}
-          <span onClick={() => navigate("/signup")}>Registrar</span>
+          <span className={styles["span"]} onClick={() => navigate("/signup")}>
+            Registrar
+          </span>
         </span>
       </form>
     </div>
